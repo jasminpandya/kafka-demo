@@ -12,20 +12,15 @@ import com.jazz.kafkademo.producer.ProducerCreator;
 
 public class MainProducer {
 	public static void main(String args[]) {
-		System.out.println("0");
 		Producer<Long, CustomObject> producer = ProducerCreator.createProducer();
-		System.out.println("3");
 		long i = (long) Math.random() * 10000 / 100;
 		while (true) {
-			System.out.println("4");
 			CustomObject obj = new CustomObject();
 			obj.setId(String.valueOf(i));
 			obj.setName("name" + String.valueOf(i));
 			try {
-				System.out.println("5");
 				RecordMetadata metadata = producer
 						.send(new ProducerRecord<Long, CustomObject>(IKafkaConstants.TOPIC_NAME, obj)).get();
-				System.out.println("6");
 				System.out.println("Offset: " + metadata.offset() + " Partition: " + metadata.partition() + " data: "
 						+ obj.toString());
 				i += 1;
@@ -35,7 +30,6 @@ public class MainProducer {
 				e.printStackTrace();
 			}
 
-			System.out.println("7");
 			try {
 				Thread.sleep(1000);
 			} catch (InterruptedException e) {

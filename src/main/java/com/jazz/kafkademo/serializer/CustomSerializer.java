@@ -18,12 +18,10 @@ public class CustomSerializer implements Serializer<CustomObject> {
 	}
 
 	public byte[] serialize(String topic, CustomObject data) {
-//		System.out.println("0-ser");
 		byte[] retVal = null;
 		if (null != data) {
 			retVal = gson.toJsonTree(data).toString().getBytes();
 		}
-//		System.out.println("1-ser");
 		return retVal;
 	}
 
