@@ -6,7 +6,7 @@
 	<artifactId>kafkademo</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<properties>
-		<kafla.api.version>2.2.0</kafla.api.version>
+		<kafla.api.version>2.6.3</kafla.api.version>
 	</properties>
 
 	<dependencies>
